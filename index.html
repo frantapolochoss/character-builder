@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Consistent Character Builder – Free AI Character Prompt Generator</title>
+<meta name="description" content="Free tool: describe your character once and get a locked character description plus ready scene prompts, so your AI cartoon character looks the same in every image. No sign-up.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Consistent Character Builder – keep your AI character the same in every image">
+<meta property="og:description" content="Fill a short form, get one locked character description and 8 ready scene prompts for Google Flow, Midjourney and other AI image tools. Free, no sign-up.">
+<meta name="twitter:card" content="summary">
+<meta name="theme-color" content="#0d0f17">
+<style>
+:root{--bg:#0d0f17;--card:#161a26;--line:#262c3d;--text:#e9ecf5;--muted:#9aa3b8;--accent:#8b7bff;--accent2:#3fd0c9;--ok:#4ade80}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
+.wrap{max-width:860px;margin:0 auto;padding:0 16px}
+header{padding:40px 0 16px;text-align:center}
+h1{font-size:clamp(28px,6vw,44px);line-height:1.15;margin:0 0 12px}
+h1 span{background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--muted);max-width:620px;margin:0 auto}
+h2{font-size:24px;margin:40px 0 12px}
+h3{font-size:18px;margin:20px 0 6px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px;margin:20px 0}
+.grid{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:640px){.grid{grid-template-columns:1fr 1fr}.full{grid-column:1/-1}}
+label{display:block;font-weight:600;font-size:14px;margin-bottom:4px}
+input,select,textarea{width:100%;padding:11px 12px;border-radius:10px;border:1px solid var(--line);background:#0f1320;color:var(--text);font:inherit}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--accent);border-color:transparent}
+.hint{color:var(--muted);font-size:13px}
+.btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+button{cursor:pointer;border:0;border-radius:10px;padding:12px 18px;font:600 15px system-ui,sans-serif}
+.primary{background:linear-gradient(90deg,var(--accent),#6d5bff);color:#fff}
+.ghost{background:transparent;color:var(--text);border:1px solid var(--line)}
+.copy{background:#232a3d;color:var(--text);padding:8px 14px;font-size:14px}
+.copy.done{background:var(--ok);color:#06210f}
+.out{white-space:pre-wrap;background:#0f1320;border:1px solid var(--line);border-radius:10px;padding:14px;font-size:15px}
+.prompt{margin:14px 0}
+.prompt-head{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px}
+.prompt-head strong{font-size:15px}
+#results{display:none}
+.cta{background:linear-gradient(135deg,#221d4a,#11313a);border:1px solid #3b3480;border-radius:16px;padding:24px;margin:32px 0}
+.cta h2{margin-top:0}
+.cta a.big{display:inline-block;background:#fff;color:#151030;text-decoration:none;font-weight:700;padding:12px 18px;border-radius:10px;margin:8px 0}
+a{color:var(--accent2)}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 16px;margin:10px 0}
+summary{cursor:pointer;font-weight:600}
+footer{color:var(--muted);font-size:14px;text-align:center;padding:40px 0}
+</style>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"Is the Consistent Character Builder free?","acceptedAnswer":{"@type":"Answer","text":"Yes. It is completely free, needs no account and runs only in your browser. Nothing you type is sent anywhere."}},
+{"@type":"Question","name":"Which AI image tools does it work with?","acceptedAnswer":{"@type":"Answer","text":"The prompts are plain text, so they work with Google Flow, Midjourney, Leonardo, Ideogram, ChatGPT image generation, Stable Diffusion and most other image or video generators."}},
+{"@type":"Question","name":"Will my character look 100% identical every time?","acceptedAnswer":{"@type":"Answer","text":"No tool can promise that. A locked description makes your character much more consistent. For even better results, also use a reference image of your character if your tool supports it."}},
+{"@type":"Question","name":"Why should I keep the description exactly the same?","acceptedAnswer":{"@type":"Answer","text":"AI models read every word. If you change the wording even slightly, the model treats it as a new person. Copying the exact same paragraph into every prompt gives it the same instructions every time."}},
+{"@type":"Question","name":"Can I use this for a cartoon series?","acceptedAnswer":{"@type":"Answer","text":"Yes. That is what it was made for: one recurring character across many scenes and episodes."}}
+]}
+</script>
+</head>
+<body>
+<header class="wrap">
+  <h1>Consistent <span>Character Builder</span></h1>
+  <p class="sub">Your AI character looks different in every image? Describe them once, get a <b>locked description</b> plus ready scene prompts. Free, no sign-up, works in your browser.</p>
+</header>
+
+<main class="wrap">
+<section class="card" aria-labelledby="form-h">
+  <h2 id="form-h" style="margin-top:0">1. Describe your character</h2>
+  <form id="f" class="grid" onsubmit="return false">
+    <div><label for="name">Name</label><input id="name" placeholder="e.g. Gary"></div>
+    <div><label for="style">Art style</label>
+      <select id="style">
+        <option value="2D anime style, clean line art, flat cel shading">2D anime</option>
+        <option value="3D cartoon style, soft rounded shapes, Pixar-like lighting">3D cartoon</option>
+        <option value="comic book style, bold ink outlines, halftone shading">Comic book</option>
+        <option value="2D flat cartoon style, thick outlines, simple flat colors">2D flat cartoon</option>
+        <option value="claymation style, handmade clay texture, soft studio light">Claymation</option>
+        <option value="semi-realistic digital painting, soft brush strokes">Semi-realistic painting</option>
+      </select></div>
+    <div><label for="type">Type, age &amp; gender</label><input id="type" placeholder="e.g. white man around 30 years old"></div>
+    <div><label for="body">Body</label><input id="body" placeholder="e.g. overweight, round belly, short"></div>
+    <div><label for="hair">Hair</label><input id="hair" placeholder="e.g. messy short brown hair"></div>
+    <div><label for="face">Face details</label><input id="face" placeholder="e.g. patchy stubble, tired eyes"></div>
+    <div><label for="acc">Glasses / accessories</label><input id="acc" placeholder="e.g. thick round black glasses"></div>
+    <div><label for="outfit">Outfit</label><input id="outfit" placeholder="e.g. wrinkled grey T-shirt with a small stain"></div>
+    <div class="full"><label for="extra">Anything else that must never change (optional)</label><input id="extra" placeholder="e.g. always wears a red wristwatch on the left wrist"></div>
+  </form>
+  <div class="btns">
+    <button class="primary" id="go">Build my character</button>
+    <button class="ghost" id="gary">Try example: Gary</button>
+  </div>
+  <p class="hint" id="err" role="alert"></p>
+</section>
+
+<section id="results" aria-live="polite">
+  <div class="card">
+    <div class="prompt-head"><h2 style="margin:0">2. Your locked description</h2><button class="copy" data-t="locked">Copy</button></div>
+    <p class="hint">Paste this exact paragraph into every prompt. Do not reword it.</p>
+    <div class="out" id="locked"></div>
+  </div>
+  <div class="card">
+    <h2 style="margin-top:0">3. Ready scene prompts</h2>
+    <div id="scenes"></div>
+  </div>
+</section>
+
+<aside class="cta">
+  <h2>This is step 1.</h2>
+  <p>A consistent character is the start. Voice, animation and a whole series come next. <b>The $0 AI Story Series</b> ebook shows the full process with free tools (Google Flow, ElevenLabs, Remotion), using Gary as the example.</p>
+  <a class="big" href="https://polochfran.gumroad.com/l/fhjckt">See The $0 AI Story Series →</a>
+  <p class="hint">Not ready? Get the <a href="https://polochfran.gumroad.com/l/free-cheat-sheet">free cheat sheet</a> first.</p>
+</aside>
+
+<article>
+  <h2>Why your AI character keeps changing</h2>
+  <p>You make a great image of your character. Then you ask for the same character in a kitchen, and suddenly the hair is a different colour, the glasses are gone and the face looks like someone else. This happens to almost everyone, and it is not your fault. It comes from how AI image models work.</p>
+  <h3>The model does not remember your character</h3>
+  <p>Every prompt is a fresh start. The model has no memory of the image you made five minutes ago. It only sees the words you give it right now. If those words are short or vague, like "a fat guy with glasses", the model fills in the missing details randomly – and random details are different every time.</p>
+  <h3>Small wording changes create a new person</h3>
+  <p>"Messy brown hair" and "untidy brunette hair" mean the same thing to you, but to the model they are different instructions. Change a few words and you get a slightly different character. Change many and you get a stranger. That is why a <b>locked description</b> works: you write the character once, in detail, and paste the exact same paragraph every time.</p>
+  <h3>Scene words fight the character words</h3>
+  <p>If your prompt says "a man at the gym", the model may add muscles and sportswear because that is what gym images usually show. The fix is to state clearly that the outfit and body stay the same, and to describe the scene separately from the character. The prompts this tool creates are built this way: character first, then scene, then a short "keep the same" reminder.</p>
+  <h3>Style must be locked too</h3>
+  <p>A character drawn in anime style and then in 3D cartoon style will never look like the same person. Pick one art style and keep it in every prompt.</p>
+  <h3>Extra tips</h3>
+  <ul>
+    <li>Pick 3–5 strong details that are easy to recognise (round black glasses, a stained grey T-shirt). Strong details survive better than many small ones.</li>
+    <li>If your tool allows a reference image, upload your best image of the character together with the locked description.</li>
+    <li>Generate a few versions and keep the one closest to your character. Even good prompts need some picking.</li>
+    <li>Save your locked description in a note so you can reuse it for every episode.</li>
+  </ul>
+</article>
+
+<section>
+  <h2>FAQ</h2>
+  <details><summary>Is the Consistent Character Builder free?</summary><p>Yes. It is completely free, needs no account and runs only in your browser. Nothing you type is sent anywhere.</p></details>
+  <details><summary>Which AI image tools does it work with?</summary><p>The prompts are plain text, so they work with Google Flow, Midjourney, Leonardo, Ideogram, ChatGPT image generation, Stable Diffusion and most other image or video generators.</p></details>
+  <details><summary>Will my character look 100% identical every time?</summary><p>No tool can promise that. A locked description makes your character much more consistent. For even better results, also use a reference image of your character if your tool supports it.</p></details>
+  <details><summary>Why should I keep the description exactly the same?</summary><p>AI models read every word. If you change the wording even slightly, the model treats it as a new person. Copying the exact same paragraph into every prompt gives it the same instructions every time.</p></details>
+  <details><summary>Can I use this for a cartoon series?</summary><p>Yes. That is what it was made for: one recurring character across many scenes and episodes.</p></details>
+</section>
+</main>
+
+<footer class="wrap">Made by <a href="https://polochfran.gumroad.com/">AI Creator Lab</a> · Free tool · No tracking, nothing leaves your browser</footer>
+
+<script>
+const $=id=>document.getElementById(id);
+const fields=['name','type','body','hair','face','acc','outfit','extra'];
+const SCENES=[
+ ['Happy','smiling widely and laughing, standing in a sunny park, warm morning light, cheerful mood'],
+ ['Sad','sitting alone on the edge of a bed, shoulders slumped, looking down, dim blue evening light from a window, quiet sad mood'],
+ ['Gym','standing next to a weight rack in a busy gym, holding a small dumbbell, looking unsure, bright fluorescent lights'],
+ ['Night city','walking down a rainy city street at night, neon signs reflecting in puddles, holding a takeaway coffee'],
+ ['Cooking','cooking in a small messy kitchen, stirring a pan on the stove, steam rising, warm kitchen light'],
+ ['Talking to camera','looking straight into the camera and talking, medium close-up, plain softly blurred living room background, eye-level shot'],
+ ['Shocked','eyes wide and mouth open in shock, holding a phone, sitting on a couch, light from the phone screen on the face'],
+ ['Office','sitting at a cluttered office desk in front of a computer, tired expression, coffee mug next to the keyboard, afternoon light']
+];
+function v(id){return $(id).value.trim().replace(/[.\s]+$/,'')}
+function build(){
+  const d={};fields.forEach(f=>d[f]=v(f));
+  if(!d.type&&!d.hair&&!d.outfit){$('err').textContent='Fill in at least type, hair or outfit (or try the Gary example).';return}
+  $('err').textContent='';
+  const name=d.name||'the character';
+  const parts=[];
+  parts.push(`${d.name?d.name+', ':''}${d.type||'a character'}`);
+  if(d.body)parts.push(`${d.body} body`);
+  if(d.hair)parts.push(d.hair);
+  if(d.face)parts.push(d.face);
+  if(d.acc)parts.push(`wearing ${d.acc}`);
+  if(d.outfit)parts.push(`dressed in ${d.outfit}`);
+  let locked=parts.join(', ')+'. ';
+  if(d.extra)locked+=d.extra.charAt(0).toUpperCase()+d.extra.slice(1)+'. ';
+  locked+=`Art style: ${$('style').value}. Same face, same hairstyle, same outfit and same proportions in every image.`;
+  $('locked').textContent=locked;
+  const keep=`Keep ${name} exactly as described: same face, hair, ${d.acc?d.acc+', ':''}outfit and body shape. Only one person in the image. No text.`;
+  $('scenes').innerHTML='';
+  SCENES.forEach(([t,s],i)=>{
+    const p=`${locked}\n\nScene: ${name} is ${s}.\n\n${keep}`;
+    const box=document.createElement('div');box.className='prompt';
+    box.innerHTML=`<div class="prompt-head"><strong>${i+1}. ${t}</strong><button class="copy" data-t="s${i}">Copy</button></div><div class="out" id="s${i}"></div>`;
+    $('scenes').appendChild(box);$('s'+i).textContent=p;
+  });
+  $('results').style.display='block';
+  $('results').scrollIntoView({behavior:'smooth'});
+}
+$('go').onclick=build;
+$('gary').onclick=()=>{
+  const g={name:'Gary',type:'white man around 30 years old',body:'overweight, round belly',hair:'messy short brown hair',face:'patchy stubble, slightly tired eyes',acc:'thick round black glasses',outfit:'a wrinkled grey T-shirt with a small stain on the chest, dark jeans',extra:''};
+  fields.forEach(f=>$(f).value=g[f]);$('style').selectedIndex=1;build();
+};
+document.addEventListener('click',async e=>{
+  const b=e.target.closest('.copy');if(!b)return;
+  const txt=$(b.dataset.t).textContent;
+  try{await navigator.clipboard.writeText(txt)}catch{const t=document.createElement('textarea');t.value=txt;document.body.appendChild(t);t.select();document.execCommand('copy');t.remove()}
+  b.textContent='Copied!';b.classList.add('done');setTimeout(()=>{b.textContent='Copy';b.classList.remove('done')},1500);
+});
+</script>
+</body>
+</html>
